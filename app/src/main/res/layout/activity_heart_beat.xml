@@ -9,4 +9,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.edu.insper.hackathon2.HeartBeatActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#000000"
+
+        android:id="@+id/text_heart_beat"/>
+
 </RelativeLayout>
