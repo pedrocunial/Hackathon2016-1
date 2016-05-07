@@ -12,6 +12,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button buttonHeart = (Button) findViewById(R.id.btn_heartbeat);
+        Button buttonTemp = (Button) findViewById(R.id.btn_temp);
+        Button buttonMove = (Button) findViewById(R.id.btn_move);
+        Button buttonOxigen = (Button) findViewById(R.id.btn_oxigen);
+
+
+
 
 
 
