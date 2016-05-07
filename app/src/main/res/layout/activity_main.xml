@@ -13,8 +13,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/escolha_o_fator_ser_monitorado" />
+        android:layout_height="wrap_content"
+        android:text="@string/escolha_o_fator_ser_monitorado"
+        android:id="@+id/text_title"/>
 
     <Button
         android:layout_width="match_parent"
@@ -39,5 +40,7 @@
         android:layout_height="100dp"
         android:text="@string/monitoramento_oxigena_o"
         android:id="@+id/btn_oxigen"/>
+
+
 
 </LinearLayout>
