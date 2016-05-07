@@ -20,7 +20,7 @@ public class HeartBeatActivity extends AppCompatActivity {
     private Random r;
     private final int high = 260;
     private final int low = 100;
-    private EditText mensagem;
+    private TextView mensagem;
     private final String frase = "Seu pai morreu";
 
     @Override
@@ -31,8 +31,8 @@ public class HeartBeatActivity extends AppCompatActivity {
 
         r = new Random();
 
-        heartbeat = r.nextInt(high - low) + low;
-        this.mensagem = (EditText) findViewById(R.id.text_heart_beat);
+        heartbeat = r.nextInt(140 - low) + low;
+        this.mensagem = (TextView) findViewById(R.id.text_heart_beat);
 
         assert this.mensagem != null;
         this.mensagem.setText(String.valueOf(heartbeat));
@@ -51,6 +51,7 @@ public class HeartBeatActivity extends AppCompatActivity {
                 mensagem.setText(String.valueOf(heartbeat));
 
                 if (heartbeat > 250) {
+                    mensagem.setText("0");
                     Toast.makeText(HeartBeatActivity.this, "Morreu!", Toast.LENGTH_SHORT).show();
                     ligar("996003399");
                     this.cancel();
