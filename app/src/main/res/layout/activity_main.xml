@@ -12,5 +12,38 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Escolha o fator à ser monitorado" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/monitoramento_cardiaco"
+        android:id="@+id/btn_heartbeat"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/monitoramento_temperatura"
+        android:id="@+id/btn_temp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Monitoramento Movimentação"
+        android:id="@+id/btn_move"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Monitoramento Oxigenação"
+        android:id="@+id/btn_oxigen"/>
+
 </RelativeLayout>
