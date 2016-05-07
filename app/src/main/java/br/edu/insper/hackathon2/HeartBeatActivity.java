@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,9 +18,10 @@ public class HeartBeatActivity extends AppCompatActivity {
 
     private int heartbeat;
     private Random r;
-    private final int high = 190;
+    private final int high = 260;
     private final int low = 100;
     private EditText mensagem;
+    private final String frase = "Seu pai morreu";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,10 @@ public class HeartBeatActivity extends AppCompatActivity {
         r = new Random();
 
         heartbeat = r.nextInt(high - low) + low;
-
         this.mensagem = (EditText) findViewById(R.id.text_heart_beat);
 
         assert this.mensagem != null;
-        this.mensagem.setText(String heartbeat);
+        this.mensagem.setText(String.valueOf(heartbeat));
 
         final CountDownTimer espaco = new CountDownTimer(1000, 1000) {
             @Override
@@ -46,22 +48,32 @@ public class HeartBeatActivity extends AppCompatActivity {
             public void onFinish() {
                 heartbeat = r.nextInt(high - low) + low;
                 System.out.println(heartbeat);
-                mensagem.setText(heartbeat);
+                mensagem.setText(String.valueOf(heartbeat));
 
-                if(heartbeat > 170) {
+                if (heartbeat > 250) {
                     Toast.makeText(HeartBeatActivity.this, "Morreu!", Toast.LENGTH_SHORT).show();
-
+                    ligar("996003399");
+                    this.cancel();
+                } else {
+                    this.start();
                 }
             }
 
         }.start();
 
-        espaco.cancel();
-        espaco.start();
 
+    }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public void ligar(String phone) {
+        // PC - Código para enviar SMS (basicamente o código do Hashimoto com o fato
+        //      de que não é permitido enviar mensagens vazias
 
+        System.out.println("Frase à ser enviada: " + this.frase);
+        SmsManager manager = SmsManager.getDefault();
 
-
+        if (PhoneNumberUtils.isWellFormedSmsAddress(phone)) {
+            manager.sendTextMessage(phone, null, this.frase, null, null);
+        }
     }
 }
