@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMove = (Button) findViewById(R.id.btn_move);
         Button buttonOxigen = (Button) findViewById(R.id.btn_oxigen);
 
+<<<<<<< HEAD
         assert buttonTemp != null;
         buttonTemp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+=======
+        assert buttonHeart != null;
+
+        buttonHeart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, HeartBeatActivity.class));
+            }
+        });
+
+
+>>>>>>> 5fcb83fd376b0c0ee948ee9c2d37366df6ac68cf
 
     }
 }

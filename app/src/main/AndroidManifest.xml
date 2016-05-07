@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.insper.hackathon2">
 
+    <!-- Precisamos desta permissão para enviar torpedos. -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".TempActivity"></activity>
+=======
+        <activity android:name=".HeartBeatActivity"></activity>
+>>>>>>> 5fcb83fd376b0c0ee948ee9c2d37366df6ac68cf
     </application>
 
 </manifest>
